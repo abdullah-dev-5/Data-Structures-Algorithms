@@ -111,6 +111,17 @@ class AVLTree:
             print(root.key, end=" ")
             self.inorder(root.right)
 
+    def preorder(self, root):
+        if root:
+            print(root.key, end=" ")
+            self.preorder(root.left)
+            self.preorder(root.right)
+
+    def postorder(self, root):
+        if root:
+            self.postorder(root.left)
+            self.postorder(root.right)
+            print(root.key, end=" ")
 
 # Create the AVL tree
 tree = AVLTree()
@@ -123,4 +134,12 @@ for value in values:
 
 print("Inorder traversal:")
 tree.inorder(root)
+print()
+
+print("Preorder traversal:")
+tree.preorder(root)
+print()
+
+print("Postorder traversal:")
+tree.postorder(root)
 print()
